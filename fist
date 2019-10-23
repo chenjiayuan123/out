@@ -1,0 +1,57 @@
+package banyuan.com;
+
+import java.util.Scanner;
+
+public class Fist{
+
+    public static void main(String[] args) {
+            int j=0;
+
+        int oldArr[] = {1, 3, 4, 5, 0, 0, 6, 6, 0, 5, 4, 7, 6, 7, 0, 5};
+        int count = 0;
+        for (int i = 0; i < oldArr.length; i++) {
+            if (oldArr[i] != 0) {
+                count++;
+            }
+        }
+        //System.out.print("count=="+count);
+        int[] newArr = new int[count];
+        for(int i = 0; i < oldArr.length; i++) {
+            if (oldArr[i] != 0) {
+                newArr[j++] = oldArr[i];
+            }
+        }
+        for(int k = 0;k < newArr.length;k++){
+            System.out.print(newArr[k]);
+        }
+
+
+
+
+        for(j = 0;j < 6;j++) {
+            newArr[j] = newArr[j] + newArr[newArr.length - j - 1];
+            newArr[newArr.length - j - 1] = newArr[j] - newArr[newArr.length - j - 1];
+            newArr[j] = newArr[j] - newArr[newArr.length - j - 1];
+        }
+
+
+        for (j = 0; j < 12; j ++) {
+            System.out.println(newArr[j]);
+
+        }
+        int max=newArr[0];
+        for(int y = 0;y < 12;y++) {
+            if (newArr[y] > max) {
+                max = newArr[y];
+            }
+        }
+        System.out.println("最大值"+max);
+        int min=newArr[0];
+        for(int m=0;m<12;m++) {
+            if (newArr[m] < min) {
+                min = newArr[m];
+            }
+        }
+        System.out.println("最大值"+min);
+    }
+}
