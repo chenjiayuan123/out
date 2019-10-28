@@ -1,0 +1,111 @@
+1.从键盘输入一个班5个学生的分数，求和并输出
+public static double sum(double a, double b, double c, double d, double e) {
+
+        return (a + b + c + d + e);
+    }
+
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("请输入5个学生的分数");
+        System.out.println("第1名学生");
+        double a = in.nextDouble();
+        System.out.println("第2名学生");
+        double b = in.nextDouble();
+        System.out.println("第3名学生");
+        double c = in.nextDouble();
+        System.out.println("第4名学生");
+        double d = in.nextDouble();
+        System.out.println("第5名学生");
+        double e = in.nextDouble();
+        System.out.println("它们的和为");
+        System.out.println(sum(a, b, c, d, e));
+
+
+    }
+2.从键盘输入某个十进制整数数，转换成对应的二进制整数并输出。
+public static void main(String[] args) {
+
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("请输入你想要转化的10进制数：");
+        int input = in.nextInt();
+        String s = Integer.toBinaryString(input);
+        System.out.println(s);
+    }
+3.输入一批整数，使用循环求出最大值与最小值，输入0时结束。
+public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("请输入第一个数:");
+
+        int input = in.nextInt();
+
+        int max, min;
+
+        max = input;
+        min = input;
+
+        for (int i = 2; input != 0; i++) {
+            System.out.println("请输入第" + i + "个数：");
+            input = in.nextInt();
+            if (input != 0) {
+                if (input > max) {
+                    max = input;
+                } else {
+                    min = input;
+                }
+            }
+        }
+        System.out.println("最大值为：" + max);
+        System.out.println("最小值为：" + min);
+
+    }
+4.找出能被5或6整除，但不能被两者同时整除的数
+ public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("请输入数字：");
+        int input = in.nextInt();
+        if ((input % 6 == 0 || input % 5 == 0) && input % 30 != 0) {
+            System.out.println("这个数能被5或6整除，但不能被两者同时整除的数");
+            System.out.println(input);
+        } else {
+            System.out.println("这个数不满足：能被5或6整除，但不能被两者同时整除的数");
+        }
+    }
+5.请输入一个任意年份,判断是否是闰年
+public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("请输入年份：");
+        int input = in.nextInt();
+        if ((input % 4 == 0 && input % 100 != 0) || input % 400 == 0) {
+            System.out.println(input + "年：是闰年");
+        } else {
+            System.out.println(input + "年：不是闰年");
+        }
+
+    }
+6.30以内的随机数,请输入任意一个数,循环10次,求这个数在随机数范围内出现的次数
+ public static void main(String[] args) {
+        Scanner type = new Scanner(System.in);
+        int count = 0;
+        int no = type.nextInt();
+        for (int i = 0; i < 10; i++) {
+            if (no == 30 * Math.random()) {
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+7.输入一个正整数，将该数的各位左右反转输出，即输入123，输出321。（使用while循环实现）
+ public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("请输入正整数");
+        int input = in.nextInt();
+
+        while (input > 0) {
+            System.out.print(input % 10);
+            input /= 10;
+        }
+
+    }
